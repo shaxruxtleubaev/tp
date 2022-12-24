@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ current_rubric.name }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="navbar">
+        <a href="/app_list/">All</a>
+        {% for rubric in rubrics %}
+            <a href="/app_list/{{ rubric.pk }}">{{rubric.name}}</a>
+        {% endfor %}
+    </div>
+
+    {% for product in products %}
+        <div class="row">
+            <div class="main">
+                <h2>{{ product.title }}</h2>
+                <h5>Category: {{ product.rubric }} </h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Price {{ product.price }}$</p>
+                <p>{{ product.content }}</p>
+                <h5>Published at: {{ product.published }}</h5>
+                <br>
+              </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

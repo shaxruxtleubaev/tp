@@ -1,170 +1,223 @@
-
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+    /* Style the body */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
 
-/* Header/logo Title */
-.header {
-  padding: 40px;
-  text-align: center;
-  background: #480ca8;
-  color: white;
-}
+    /* Header/logo Title */
+    .header {
+      padding: 40px;
+      text-align: center;
+      background: #480ca8;
+      color: white;
+    }
 
-/* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-}
-
-/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
+    /* Increase the font size of the heading */
+    .header h1 {
+      font-size: 350%;
+    }
 
 
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
+    /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+    }
 
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    /* Style the navigation bar links */
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
 
-/* Active/current link */
-.navbar a.active {
-  background-color: #666;
-  color: white;
-}
 
-/* Column container */
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
+    /* Right-aligned link */
+    .navbar a.right {
+      float: right;
+    }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
 
-/* Main column */
-.main {
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-}
+    /* Active/current link */
+    .navbar a.active {
+      background-color: #666;
+      color: white;
+    }
 
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
+    /* Column container */
+    .row {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+    }
 
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
+    /* Create two unequal columns that sits next to each other */
+    /* Sidebar/left column */
+    .side {
+      -ms-flex: 30%; /* IE10 */
+      flex: 30%;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
-  }
-}
+    /* Main column */
+    .main {
+      -ms-flex: 70%; /* IE10 */
+      flex: 70%;
+      background-color: white;
+      padding: 20px;
+    }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
+    /* Fake image, just for this example */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+    }
+
+    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 700px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .navbar a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    .links {
+        padding: 2px;
+        text-decoration: none;
+        margin: 1%;
+    }
+
+    .links:hover {
+        background: blue;
+        color: white;
+    }
+
+    .active-module {
+        background: blue;
+        color: white;
+    }
+
+    .image {
+        width: 100%;
+        filter: blur(5px);
+    }
+
+    .container {
+    position: relative;
+    text-align: center;
+    font-size: 60px;
+    color: black;
+    }
+
+    .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    </style>
 </head>
 <body>
+    <header>
+        <div class="header">
+          <h1>TechShop</h1>
+          <p>Your <b>key</b> to the succes</p>
+        </div>
 
-    <div class="header">
-      <h1>TechShop</h1>
-      <p>Your <b>key</b> to the succes</p>
-    </div>
+        <div class="navbar">
+          <a href="{% url 'home_page' %}" class="active">Home</a>
+          <a href="#">Contact</a>
+          <a href="#">About</a>
+          <a href="#" class="right">Report</a>
+        </div>
+    </header>
 
-    <div class="navbar">
-      <a href="#" class="active">Home</a>
-      <a href="#">Contact</a>
-      <a href="#">About</a>
-      <a href="#" class="right">Report</a>
-    </div>
 
-    <div class="row">
-      <div class="side">
-        <h2>About Me</h2>
-        <h5>Photo of me:</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-        <h3>More Text</h3>
-        <p>Lorem ipsum dolor sit ame.</p>
-        <div class="fakeimg" style="height:60px;">Image</div><br>
-        <div class="fakeimg" style="height:60px;">Image</div><br>
-        <div class="fakeimg" style="height:60px;">Image</div>
-      </div>
-      <div class="main">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        <br>
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Sep 2, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      </div>
-    </div>
+<!--    <div class="row">-->
+<!--      <div class="side">-->
+<!--        <h2>About Me</h2>-->
+<!--        <h5>Photo of me:</h5>-->
+<!--        <div class="fakeimg" style="height:200px;">Image</div>-->
+<!--        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>-->
+<!--        <h3>More Text</h3>-->
+<!--        <p>Lorem ipsum dolor sit ame.</p>-->
+<!--        <div class="fakeimg" style="height:60px;">Image</div><br>-->
+<!--        <div class="fakeimg" style="height:60px;">Image</div><br>-->
+<!--        <div class="fakeimg" style="height:60px;">Image</div>-->
+<!--      </div>-->
+<!--      <div class="main">-->
+<!--        <h2>TITLE HEADING</h2>-->
+<!--        <h5>Title description, Dec 7, 2017</h5>-->
+<!--        <div class="fakeimg" style="height:200px;">Image</div>-->
+<!--        <p>Some text..</p>-->
+<!--        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>-->
+<!--        <br>-->
+<!--        <h2>TITLE HEADING</h2>-->
+<!--        <h5>Title description, Sep 2, 2017</h5>-->
+<!--        <div class="fakeimg" style="height:200px;">Image</div>-->
+<!--        <p>Some text..</p>-->
+<!--        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="footer">
+          <h5>
+              ©2022, ARD «Texnopos»
+          </h5>
+          <h6>
+              Личный сайт для командного проекта
+          </h6>
 
-    <div class="footer">
-      <h2>Footer</h2>
-    </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>

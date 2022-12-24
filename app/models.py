@@ -1,7 +1,5 @@
 from django.db import models
 
-from django.db import models
-
 class Product(models.Model):
     title = models.CharField(max_length=80, verbose_name='Товар')
     content = models.TextField(null=True, blank=True, verbose_name='Описание')
@@ -28,6 +26,5 @@ class Rubric(models.Model):
         verbose_name = 'Рубрика'
         ordering = ['name']
 
-class Authors(models.Model):
-    first_author = models.CharField(max_length=100, blank=True, null=True)
-    second_author = models.CharField(max_length=100, blank=True, null=True)
+class Author(models.Model):
+    author = models.CharField(max_length=100, blank=True, null=True)
