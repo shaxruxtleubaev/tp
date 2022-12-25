@@ -18,13 +18,17 @@
             <div class="main">
                 <h2>{{ product.title }}</h2>
                 <h5>Category: {{ product.rubric }} </h5>
-                <div class="fakeimg" style="height:200px;">Image</div>
+<!--                <div class="fakeimg" style="height:200px;">Image</div>-->
+                <div>
+                    <img src="{{ product.image.url }}" alt="" class="image4">
+                </div>
                 <p>Price {{ product.price }}$</p>
                 <p>{{ product.content }}</p>
                 <h5>Published at: {{ product.published }}</h5>
                 <br>
               </div>
             </div>
+
         </div>
     {% endfor %}
 

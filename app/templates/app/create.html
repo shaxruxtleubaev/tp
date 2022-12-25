@@ -10,10 +10,10 @@
     </div>
     <div class="form">
         <h1>Add post</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Add">
-        </form>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Create</button>
+            </form>
     </div>
 {% endblock %}

@@ -31,16 +31,17 @@ def app_detail(request, rubric_id):
     }
     return render(request, 'app/app_detail.html', context)
 
-
-class ProductCreateView(CreateView):
-    template_name = 'app/create.html'
-    form_class = ProductForm
-    success_url = reverse_lazy('app_list')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['rubrics'] = Rubric.objects.all()
-        return context
+def ProductCreateView(request):
+    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return redirect('/manage/')
+    context = {
+        'form': form
+    }
+    return render(request, 'app/create.html', context)
 
 
 def manage(request):
