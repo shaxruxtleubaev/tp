@@ -1,21 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    {{ current_rubric.name }}
-{% endblock %}
-
 {% block content %}
-
-    <div class="navbar">
-        <a href="/app_list/">All</a>
-        {% for rubric in rubrics %}
-            <a href="/app_list/{{ rubric.pk }}">{{rubric.name}}</a>
-        {% endfor %}
-        {% if request.user.is_staff %}
-            <a href="{% url 'create' %}" class="right">Create post</a>
-            <a href="{% url 'manage' %}" class="right">Manage Posts</a>
-        {% endif %}
-    </div>
 
     {% for product in products %}
         <div class="row">
@@ -30,7 +15,7 @@
               </div>
             </div>
         </div>
+        <a><button class="button button1">Edit</button></a>
     {% endfor %}
-
 
 {% endblock %}

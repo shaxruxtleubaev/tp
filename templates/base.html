@@ -160,20 +160,58 @@
     transform: translate(-50%, -50%);
     }
 
+    .button {
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      margin-bottom: 2%;
+    }
+
+    .button1 {
+      background-color: white;
+      color: black;
+      border: 2px solid #4CAF50;
+      margin-left: 1%;
+      border-radius: 10px;
+    }
+
+    .button1:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .button2 {
+      background-color: white;
+      color: black;
+      border: 2px solid red;
+      border-radius: 10px;
+    }
+
+    .button2:hover {
+      background-color: red;
+      color: white;
+    }
+
     </style>
 </head>
 <body>
     <header>
         <div class="header">
-          <h1>TechShop</h1>
-          <p>Your <b>key</b> to the succes</p>
+          <h1>UltraTech</h1>
+          <p>Your <b>key</b> to the <b>PROSPERITY</b></p>
         </div>
 
         <div class="navbar">
-          <a href="{% url 'home_page' %}" class="active">Home</a>
-          <a href="#">Contact</a>
-          <a href="#">About</a>
-          <a href="#" class="right">Report</a>
+            <a href="{% url 'home_page' %}" class="active">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+            <a href="#" class="right">Report</a>
         </div>
     </header>
 
@@ -211,9 +249,9 @@
           <h5>
               ©2022, ARD «Texnopos»
           </h5>
-          <h6>
-              Личный сайт для командного проекта
-          </h6>
+          <h5>
+              Personal website for team project
+          </h5>
 
 
         </div>
