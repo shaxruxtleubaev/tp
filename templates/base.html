@@ -22,9 +22,9 @@
 
     /* Header/logo Title */
     .header {
-      padding: 40px;
+      padding: 10px;
       text-align: center;
-      background: #480ca8;
+      background: #d80032;
       color: white;
     }
 
@@ -146,6 +146,16 @@
         filter: blur(5px);
     }
 
+    .image2 {
+        width: 10%;
+        height: 10%;
+    }
+
+    .image3 {
+        width: 100%;
+        height: 400px;
+    }
+
     .container {
     position: relative;
     text-align: center;
@@ -174,11 +184,12 @@
     }
 
     .button1 {
+      width: 10%;
       background-color: white;
       color: black;
       border: 2px solid #4CAF50;
-      margin-left: 1%;
-      border-radius: 10px;
+      margin-left: 1.5%;
+      border-radius: 15px;
     }
 
     .button1:hover {
@@ -187,10 +198,11 @@
     }
 
     .button2 {
+      width: 10%;
       background-color: white;
       color: black;
       border: 2px solid red;
-      border-radius: 10px;
+      border-radius: 15px;
     }
 
     .button2:hover {
@@ -198,62 +210,65 @@
       color: white;
     }
 
+    .button3:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    .button3 {
+      width: 15%;
+      background-color: white;
+      color: black;
+      border: 2px solid blue;
+      margin: 2%;
+      border-radius: 50px;
+    }
+
+    .button4:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    .button4 {
+      width: 5%;
+      background-color: white;
+      color: black;
+      border: 2px solid blue;
+      margin: 2%;
+      border-radius: 50px;
+    }
+
+    .form {
+        margin: 3%;
+    }
     </style>
 </head>
 <body>
     <header>
         <div class="header">
-          <h1>UltraTech</h1>
-          <p>Your <b>key</b> to the <b>PROSPERITY</b></p>
+            <h1>UltraTech</h1>
+            <p>Your <b>key</b> to the <b>PROSPERITY</b></p>
         </div>
 
         <div class="navbar">
-            <a href="{% url 'home_page' %}" class="active">Home</a>
-            <a href="#">Contact</a>
+            <a href="{% url 'home_page' %}">Home</a>
+            <a href="{% url 'contact' %}">Contact</a>
             <a href="#">About</a>
             <a href="#" class="right">Report</a>
         </div>
     </header>
 
-
-<!--    <div class="row">-->
-<!--      <div class="side">-->
-<!--        <h2>About Me</h2>-->
-<!--        <h5>Photo of me:</h5>-->
-<!--        <div class="fakeimg" style="height:200px;">Image</div>-->
-<!--        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>-->
-<!--        <h3>More Text</h3>-->
-<!--        <p>Lorem ipsum dolor sit ame.</p>-->
-<!--        <div class="fakeimg" style="height:60px;">Image</div><br>-->
-<!--        <div class="fakeimg" style="height:60px;">Image</div><br>-->
-<!--        <div class="fakeimg" style="height:60px;">Image</div>-->
-<!--      </div>-->
-<!--      <div class="main">-->
-<!--        <h2>TITLE HEADING</h2>-->
-<!--        <h5>Title description, Dec 7, 2017</h5>-->
-<!--        <div class="fakeimg" style="height:200px;">Image</div>-->
-<!--        <p>Some text..</p>-->
-<!--        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>-->
-<!--        <br>-->
-<!--        <h2>TITLE HEADING</h2>-->
-<!--        <h5>Title description, Sep 2, 2017</h5>-->
-<!--        <div class="fakeimg" style="height:200px;">Image</div>-->
-<!--        <p>Some text..</p>-->
-<!--        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>-->
-<!--      </div>-->
-<!--    </div>-->
     {% block content %}
     {% endblock %}
+
     <footer>
         <div class="footer">
           <h5>
               ©2022, ARD «Texnopos»
           </h5>
-          <h5>
+          <h6>
               Personal website for team project
-          </h5>
-
-
+          </h6>
         </div>
     </footer>
 

@@ -45,30 +45,29 @@ class ProductCreateView(CreateView):
 
 def manage(request):
     products = Product.objects.all()
-    rubrics = Rubric.objects.all()
     context = {
-        'products': products,
-        'rubrics': rubrics
+        'products': products
     }
     return render(request, 'app/manage_list.html', context)
 
-
-'''
 def update(request, pk):
-    app = Product.objects.get(id=pk)
-    form = ProductForm(instance=app)
+    product = Product.objects.get(id=pk)
+    form = ProductForm(instance=product)
     if request.method == 'POST':
-        form = ProductForm(request.POST, instance=app, files=request.FILES)
+        form = ProductForm(request.POST, instance=product, files=request.FILES)
         if form.is_valid():
             form.save()
-        return redirect('/app_list/manage/')
+        return redirect('/manage/')
     context = {
         'form': form
     }
-    return render(request, 'update.html', context)
+    return render(request, 'app/update.html', context)
 
 def delete(request, pk):
-    app = Product.objects.get(id=pk)
-    app.delete()
-    return redirect('/app_list/')
-'''
+    product = Product.objects.filter(id=pk)
+    product.delete()
+    return redirect('/manage/')
+
+
+def contact(request):
+    return render(request, 'app/contact.html')

@@ -6,6 +6,9 @@
 
 {% block content %}
     <div>
+        <a href="{% url 'manage' %}"><button class="button button4">Back</button></a>
+    </div>
+    <div class="form">
         <h1>Add post</h1>
         <form method="post">
             {% csrf_token %}
