@@ -313,6 +313,45 @@
       clear: both;
     }
 
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      outline: 0;
+    }
+
+    section{
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(-45deg, #000000 0%, #232323 13%, #575757 25%, #7a7a7a 38%, white 50%, #7a7a7a 62%, #575757 75%, #232323 87%, #000000 100%);;
+      background-size: 400% 400%;
+      position: relative;
+      animation: animate 4s ease-in-out infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1{
+      color: black;
+      padding: 20px;
+      font-size: 50px;
+      font-family: sans-serif;
+    }
+
+    @keyframes animate{
+      0%{
+        background-position: 0 50%;
+      }
+      50%{
+        background-position: 100% 50%;
+      }
+      100%{
+        background-position: 0 50%;
+      }
+    }
+
     /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 600px) {
       .col-25, .col-75, input[type=submit] {
@@ -324,10 +363,13 @@
 </head>
 <body>
     <header>
-        <div class="header">
+        <section>
+           <h1>UltraTech</h1>
+        </section>
+        <!-- <div class="header">
             <h1>UltraTech</h1>
             <p>Your <b>key</b> to the <b>PROSPERITY</b></p>
-        </div>
+        </div> -->
 
         <div class="navbar">
             <a href="{% url 'home_page' %}">Home</a>
