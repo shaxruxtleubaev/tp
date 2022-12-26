@@ -31,6 +31,13 @@ def app_detail(request, rubric_id):
     }
     return render(request, 'app/app_detail.html', context)
 
+def manage(request):
+    products = Product.objects.all()
+    context = {
+        'products': products
+    }
+    return render(request, 'app/manage_list.html', context)
+
 def ProductCreateView(request):
     form = ProductForm()
     if request.method == 'POST':
@@ -42,14 +49,6 @@ def ProductCreateView(request):
         'form': form
     }
     return render(request, 'app/create.html', context)
-
-
-def manage(request):
-    products = Product.objects.all()
-    context = {
-        'products': products
-    }
-    return render(request, 'app/manage_list.html', context)
 
 def update(request, pk):
     product = Product.objects.get(id=pk)

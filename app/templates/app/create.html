@@ -10,10 +10,10 @@
     </div>
     <div class="form">
         <h1>Add post</h1>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Create</button>
+                <input type="submit" value="Create">
             </form>
     </div>
 {% endblock %}

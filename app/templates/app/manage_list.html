@@ -9,24 +9,29 @@
         <a href="{% url 'app_list' %}"><button class="button button3">Back</button></a>
     </div>
     {% for product in products %}
-
         <div class="row">
+            <div class="side">
+                {% if product.image %}
+                    <div>
+                        <img src="{{ product.image.url }}" alt="" class="image4">
+                    </div>
+                {% else %}
+                   <p></p>
+                {% endif %}
+            </div>
             <div class="main">
                 <h2>{{ product.title }}</h2>
                 <h5>Category: {{ product.rubric }} </h5>
-<!--                <div class="fakeimg" style="height:200px;">Image</div>-->
-                <div>
-                    <img src="{{ product.image.url }}" alt="" class="image4">
-                </div>
-                <p>Price {{ product.price }}$</p>
+                <p>Price: {{ product.price }}$</p>
                 <p>{{ product.content }}</p>
                 <h5>Published at: {{ product.published }}</h5>
+                <a href="/manage/{{product.id}}/update"><button class="button button1">Edit</button></a>
+                <a href="/manage/{{product.id}}/delete"><button class="button button2">Delete</button></a>
                 <br>
               </div>
             </div>
         </div>
-        <a href="/manage/{{product.id}}/update"><button class="button button1">Edit</button></a>
-        <a href="/manage/{{product.id}}/delete"><button class="button button2">Delete</button></a>
+
     {% endfor %}
 
 {% endblock %}

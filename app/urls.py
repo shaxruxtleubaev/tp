@@ -13,7 +13,9 @@ urlpatterns = [
     path('manage/<int:pk>/delete/', delete, name='delete'),
 
     path('contact/', contact, name='contact'),
-]
+] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+'''
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+'''
