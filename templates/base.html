@@ -222,7 +222,7 @@
     }
 
     .button3 {
-      width: 5%;
+      width: 8%;
       background-color: white;
       color: black;
       border: 2px solid blue;
@@ -236,7 +236,7 @@
     }
 
     .button4 {
-      width: 5%;
+      width: 8%;
       background-color: white;
       color: black;
       border: 2px solid blue;
@@ -245,7 +245,80 @@
     }
 
     .form {
-        margin: 0% 0% 2% 2% ;
+        margin: 0% 0% 8% 2% ;
+    }
+
+    input[type=text], select, textarea {
+      width: 30%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=number], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: left;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
     }
     </style>
 </head>
@@ -259,8 +332,8 @@
         <div class="navbar">
             <a href="{% url 'home_page' %}">Home</a>
             <a href="{% url 'contact' %}">Contact</a>
-            <a href="#">About</a>
-            <a href="#" class="right">Report</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'report' %}" class="right">Report</a>
         </div>
     </header>
 <!--

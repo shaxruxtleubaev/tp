@@ -12,8 +12,13 @@
         <h1>Add post</h1>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
+                <p>Name: {{ form.title }}</p>
+                <p>Desciption {{ form.content }}</p>
+                <p>Price $ {{ form.price }}</p>
+                <p>Rubric {{ form.rubric }}</p>
+                <p>Image {{ form.image }}</p>
                 <input type="submit" value="Create">
             </form>
     </div>
+    <p></p>
 {% endblock %}

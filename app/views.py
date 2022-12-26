@@ -71,3 +71,9 @@ def delete(request, pk):
 
 def contact(request):
     return render(request, 'app/contact.html')
+
+def about(request):
+    return render(request, 'app/about.html')
+
+def report(request):
+    return render(request, 'app/report.html')

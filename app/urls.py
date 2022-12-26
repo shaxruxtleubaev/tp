@@ -13,6 +13,8 @@ urlpatterns = [
     path('manage/<int:pk>/delete/', delete, name='delete'),
 
     path('contact/', contact, name='contact'),
+    path('about/', about, name='about'),
+    path('repo/', report, name='report'),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 '''
