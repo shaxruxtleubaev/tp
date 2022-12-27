@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Rubric, Author
+from .models import Product, Rubric
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'content', 'price', 'published', 'rubric')
@@ -14,10 +14,3 @@ class RubricAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 admin.site.register(Rubric, RubricAdmin)
-
-class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('author',)
-    list_display_links = ('author',)
-    search_fields = ('author',)
-
-admin.site.register(Author, AuthorAdmin)
