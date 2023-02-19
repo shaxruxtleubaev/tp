@@ -9,7 +9,6 @@ from django.shortcuts import redirect
 def home_page(request):
     return render(request, 'app/home_page.html')
 
-
 def app_list(request):
     products = Product.objects.all()
     rubrics = Rubric.objects.all()
